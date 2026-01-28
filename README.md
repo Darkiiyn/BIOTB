@@ -1,17 +1,19 @@
-# Bio Cover (Vercel)
+# Bio Cover (Node.js + Vercel)
+
+Проект теперь запускается как **Node.js (Express)** и нормально работает на Vercel без 404.
 
 ## Что менять
 Открой `config.js` и поменяй:
-- name, tagline
+- `name`, `tagline`
 - ссылки (discord/roblox/telegram/spotify/tiktok)
 - `trackTitle`
 - `openLink`
 
 ## Аватар
-Заменяй `public/ava.png` на свою картинку (лучше квадрат 512x512).
+Заменяй `public/ava.png` на свою картинку (лучше квадрат 512×512).
 
 ## Музыка
-Положи файл в `public/` с именем:
+Положи файл в `public/`:
 - `song.mp3` (основной вариант)
 - или `song.ogg`
 - или `song.wav`
@@ -19,14 +21,23 @@
 
 Сайт сам выберет первую найденную из списка в `config.js`.
 
-⚠️ Важно:
-- Автозвук может быть заблокирован браузером. Поэтому есть интро-экран: вход по клику.
-- Текущий `public/song.mp3` в архиве пустой-заглушка. Замени на реальный файл.
-- Я добавил `public/song.wav` как 1 секунда тишины (для теста).
+⚠️ Автозвук часто блокируется на iPhone/Chrome — поэтому есть интро-экран (вход по клику).
+
+## Локальный запуск
+```bash
+npm i
+npm run dev
+```
+Открой `http://localhost:3000`.
 
 ## Деплой на Vercel
-Загрузи проект на GitHub → Import в Vercel как обычный static site (Other).
+1) Загрузи проект на GitHub.
+2) Import в Vercel.
+3) Framework Preset: **Other**.
+4) Build Command: пусто.
+5) Output Directory: пусто.
 
+Vercel будет использовать `vercel.json` и `api/index.js`.
 
 ## Важно про пути
-В этом проекте ассеты лежат в папке `public/`, поэтому в HTML используются пути вида `public/ava.png`.
+Ассеты лежат в `public/`, поэтому в HTML пути вида `public/ava.png`.
